@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">DatastoreExample</string>
+    <string name="preferences_click">Preferences Click!</string>
+    <string name="proto_click">Proto Click!</string>
+    <string name="preferences">Preferences : </string>
+    <string name="proto">Proto : </string>
+</resources>

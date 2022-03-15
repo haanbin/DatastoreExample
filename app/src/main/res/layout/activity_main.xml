@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.example.datastoreexample.MainViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <Button
+            android:id="@+id/btn_preference_click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> vm.onPreferencesClickCount()}"
+            android:text="@string/preferences_click"
+            app:layout_constraintBottom_toTopOf="@id/tv_preference"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/tv_preference"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/preferences"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@id/btn_proto_click"
+            app:layout_constraintStart_toStartOf="@id/btn_proto_click"
+            app:layout_constraintTop_toBottomOf="@id/btn_preference_click" />
+
+
+        <TextView
+            android:id="@+id/tv_preference_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"
+            android:text="@{vm.preferenceCount}"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/tv_preference"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tv_preference"
+            app:layout_constraintTop_toTopOf="@id/tv_preference"
+            tools:text="123" />
+
+        <Button
+            android:id="@+id/btn_proto_click"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:onClick="@{() -> vm.onProtoClickCount()}"
+            android:text="@string/proto_click"
+            app:layout_constraintBottom_toTopOf="@id/tv_proto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_preference" />
+
+        <TextView
+            android:id="@+id/tv_proto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/proto"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/tv_preference"
+            app:layout_constraintTop_toBottomOf="@id/btn_proto_click" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@{vm.protoCount}"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@id/tv_proto"
+            app:layout_constraintEnd_toEndOf="@id/tv_preference_count"
+            app:layout_constraintStart_toStartOf="@id/tv_preference_count"
+            app:layout_constraintTop_toTopOf="@id/tv_proto"
+            tools:text="123" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
